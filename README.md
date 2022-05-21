@@ -14,6 +14,7 @@ This is a repo containing my personal Dotfiles for configuration of my shell, pr
   - [Ubuntu](#ubuntu)
   - [Terminal environment](#terminal-environment)
     - [Font](#font)
+    - [Windows Terminal Color Schemes](#windows-terminal-color-schemes)
 - [Installation of 'beauty packages'](#installation-of-beauty-packages)
   - [Zsh](#zsh)
   - [Starship](#starship)
@@ -48,6 +49,18 @@ I am using the `JetBrains Mono NerdFont` in Windows Terminal, which is important
 I downloaded the font I use from here:
 
 https://www.nerdfonts.com/font-downloads
+
+### Windows Terminal Color Schemes
+
+Attached to this repository is:
+
+`colorschemes.json`
+
+Which contains code for several colorschemes that [The Digital Life](https://github.com/xcad2k/dotfiles/blob/c00b6f9336f4a4ac525163f649213307b96b163c/Windows/WindowsTerminal/settings.json), (my setup is largely pulled from his dotfiles); put together. The link above goes to his YouTube channel, and you can find his code here on GitHub:
+* Profile: [@xcad2k](https://github.com/xcad2k)
+* Link to his dotfiles repo: [xcad2k/dotfiles](https://github.com/xcad2k/dotfiles)
+
+Go give him some love, and thank him for these awesome dotfiles!
 
 # Installation of 'beauty packages'
 

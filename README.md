@@ -48,7 +48,7 @@ You will need `NO LATER` than:
 If you install a version of Ubuntu later than this one, setting up the development environment later in these instructions will not work.
 
 I use Ubuntu on WSL2, whcih can be installed using.
-```
+```powershell
 PS C:\> wsl --install -d Ubuntu
 ```
 Now the main-line version of Ubuntu for WSL2 is Ubuntu 20.04.4 LTS, but if that changes int the future, you can install it directly by issuing `wsl --install -d Ubuntu-20.04` instead.
@@ -101,7 +101,7 @@ $ curl -sS https://starship.rs/install.sh | sh
 
 ### Windows PowerShell:
 On PowerShell 7 using the [Chocolatey Package Manager](https://chocolatey.org/install):
-```
+```powershell
 PS C:\> choco install starship
 ```
 
@@ -128,7 +128,7 @@ If you've cloned and are using my dotfiles, make sure that `starship.toml` is in
 `C:\Users\Noah Ramsey\.starship\starship.toml`
 
 You will add this statement to your `$PROFILE` file for PowerSHell, (you can find my PS profile included in this repo), to invoke Starship:
-```
+```powershell
 Invoke-Expression (&starship init powershell)
 ```
 

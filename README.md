@@ -3,12 +3,25 @@ This is a repo containing my personal Dotfiles for configuration of my shell, pr
 
 ## Finished product
 
+### Ubuntu/Linux:
+
 ![Prompt](promptdotfiles.jpg)
+
+### Windows PowerShell:
+
+![PsPrompt](psprompt.png)
+
+### Neovim:
+
+![NeoVim](nvimpowerline.jpg)
 
 # Table of Contents
 
 - [dotfiles](#dotfiles)
   - [Finished product](#finished-product)
+    - [Ubuntu/Linux:](#ubuntulinux)
+    - [Windows PowerShell:](#windows-powershell)
+    - [Neovim:](#neovim)
 - [Table of Contents](#table-of-contents)
 - [Pre-requisites](#pre-requisites)
   - [Ubuntu](#ubuntu)
@@ -18,8 +31,11 @@ This is a repo containing my personal Dotfiles for configuration of my shell, pr
 - [Installation of 'beauty packages'](#installation-of-beauty-packages)
   - [Zsh](#zsh)
   - [Starship](#starship)
+    - [Ubuntu/Linux:](#ubuntulinux-1)
+    - [Windows PowerShell:](#windows-powershell-1)
 - [Configuration](#configuration)
   - [Setting zsh as the default shell](#setting-zsh-as-the-default-shell)
+  - [Configuring PowerShell 7](#configuring-powershell-7)
   - [Further configuration](#further-configuration)
 
 # Pre-requisites
@@ -76,9 +92,17 @@ Latest version is fine.
 
 Starship can be found at this website: https://starship.rs/
 
+### Ubuntu/Linux:
+
 Installation is done using a variety of different package managers, but I opted to go with the direct installation from their website:
 ```
 $ curl -sS https://starship.rs/install.sh | sh
+```
+
+### Windows PowerShell:
+On PowerShell 7 using the [Chocolatey Package Manager](https://chocolatey.org/install):
+```
+PS C:\> choco install starship
 ```
 
 # Configuration
@@ -96,6 +120,17 @@ If you've cloned my Dotfiles repo, now is a good time to put my .zshrc file in y
 `.config/starship.toml`
 
 in place, or Starship will boot as a blank prompt.
+
+## Configuring PowerShell 7
+
+If you've cloned and are using my dotfiles, make sure that `starship.toml` is in a directory in your Home folder labeled `.starship`, like so:
+
+`C:\Users\Noah Ramsey\.starship\starship.toml`
+
+You will add this statement to your `$PROFILE` file for PowerSHell, (you can find my PS profile included in this repo), to invoke Starship:
+```
+Invoke-Expression (&starship init powershell)
+```
 
 ## Further configuration
 

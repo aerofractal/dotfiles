@@ -33,7 +33,7 @@ If you install a version of Ubuntu later than this one, setting up the developme
 
 I use Ubuntu on WSL2, whcih can be installed using.
 ```
-PS C:\Users\Noah Ramsey> wsl --install -d Ubuntu
+PS C:\> wsl --install -d Ubuntu
 ```
 Now the main-line version of Ubuntu for WSL2 is Ubuntu 20.04.4 LTS, but if that changes int the future, you can install it directly by issuing `wsl --install -d Ubuntu-20.04` instead.
 
@@ -56,7 +56,7 @@ Attached to this repository is:
 
 `colorschemes.json`
 
-Which contains code for several colorschemes that [The Digital Life](https://github.com/xcad2k/dotfiles/blob/c00b6f9336f4a4ac525163f649213307b96b163c/Windows/WindowsTerminal/settings.json), (my setup is largely pulled from his dotfiles); put together. The link above goes to his YouTube channel, and you can find his code here on GitHub:
+Which contains code for several colorschemes that [The Digital Life](https://www.youtube.com/c/TheDigitalLifeTech), (my setup is largely pulled from his dotfiles); put together. The link above goes to his YouTube channel, and you can find his code here on GitHub:
 * Profile: [@xcad2k](https://github.com/xcad2k)
 * Link to his dotfiles repo: [xcad2k/dotfiles](https://github.com/xcad2k/dotfiles)
 

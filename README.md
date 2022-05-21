@@ -3,13 +3,13 @@ This is a repo containing my personal Dotfiles for configuration of my shell, pr
 
 ## Finished product
 
-![Prompt](#promptdotfiles.jpg)
+![Prompt](promptdotfiles.jpg)
 
-## Table of Contents
+# Table of Contents
 
 - [dotfiles](#dotfiles)
   - [Finished product](#finished-product)
-  - [Table of Contents](#table-of-contents)
+- [Table of Contents](#table-of-contents)
 - [Pre-requisites](#pre-requisites)
   - [Ubuntu](#ubuntu)
   - [Terminal environment](#terminal-environment)

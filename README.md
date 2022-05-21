@@ -1,9 +1,14 @@
 # dotfiles
 This is a repo containing my personal Dotfiles for configuration of my shell, prompt, and environment on Ubuntu 20.04 LTS.
 
+## Finished product
+
+![Prompt](#promptdotfiles.png)
+
 ## Table of Contents
 
 - [dotfiles](#dotfiles)
+  - [Finished product](#finished-product)
   - [Table of Contents](#table-of-contents)
 - [Pre-requisites](#pre-requisites)
   - [Ubuntu](#ubuntu)

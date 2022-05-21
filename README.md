@@ -17,12 +17,6 @@ This is a repo containing my personal Dotfiles for configuration of my shell, pr
 
 # Table of Contents
 
-- [dotfiles](#dotfiles)
-  - [Finished product](#finished-product)
-    - [Ubuntu/Linux:](#ubuntulinux)
-    - [Windows PowerShell:](#windows-powershell)
-    - [Neovim:](#neovim)
-- [Table of Contents](#table-of-contents)
 - [Pre-requisites](#pre-requisites)
   - [Ubuntu](#ubuntu)
   - [Terminal environment](#terminal-environment)

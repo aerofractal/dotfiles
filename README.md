@@ -145,7 +145,7 @@ If you've cloned and are using my dotfiles, make sure that `starship.toml` is in
 
 `C:\Users\Noah Ramsey\.starship\starship.toml`
 
-You will add this statement to your `$PROFILE` file for PowerSHell, (you can find my PS profile included in this repo), to invoke Starship:
+You will add this statement to your `$PROFILE` file for PowerShell, (you can find my PS profile included in this repo), to invoke Starship:
 ```powershell
 Invoke-Expression (&starship init powershell)
 ```

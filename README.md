@@ -33,10 +33,21 @@ This is a repo containing my personal Dotfiles for configuration of my shell, pr
   - [Starship](#starship)
     - [Ubuntu/Linux:](#ubuntulinux-1)
     - [Windows PowerShell:](#windows-powershell-1)
+    - [vim-plug for Neovim:](#vim-plug-for-neovim)
 - [Configuration](#configuration)
   - [Setting zsh as the default shell](#setting-zsh-as-the-default-shell)
   - [Configuring PowerShell 7](#configuring-powershell-7)
-  - [Further configuration](#further-configuration)
+  - [Neovim powerline, and other plugins](#neovim-powerline-and-other-plugins)
+- [Further configuration](#further-configuration)
+- [Setting up the development environment](#setting-up-the-development-environment)
+  - [Node.js Version Manager (NVM)](#nodejs-version-manager-nvm)
+  - [SQLite3](#sqlite3)
+  - [Yarn](#yarn)
+  - [Ruby Version Manager (RVM)](#ruby-version-manager-rvm)
+  - [Ruby](#ruby)
+  - [Rails](#rails)
+- [Development environment IDE integration](#development-environment-ide-integration)
+- [Conclusion](#conclusion)
 
 # Pre-requisites
 
@@ -100,10 +111,23 @@ $ curl -sS https://starship.rs/install.sh | sh
 ```
 
 ### Windows PowerShell:
+
 On PowerShell 7 using the [Chocolatey Package Manager](https://chocolatey.org/install):
 ```powershell
 PS C:\> choco install starship
 ```
+### vim-plug for Neovim:
+
+vim-plug can be found on GitHub, referednce their documentation for installation on platforms other than Neovim on Ubuntu/Linux.
+
+[junegunn/vim-plug](https://github.com/junegunn/vim-plug)
+
+To install vim-plug for Neovim, run:
+```
+$ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+We will go over configuration of the plugins needed to make Neovim look like mine above in the next section.
 
 # Configuration
 
@@ -132,7 +156,119 @@ You will add this statement to your `$PROFILE` file for PowerSHell, (you can fin
 Invoke-Expression (&starship init powershell)
 ```
 
-## Further configuration
+## Neovim powerline, and other plugins
 
-If you are using my Dotfiles, at this point setting up Zsh and Starship are complete. If you'd like to configure Zsh and Starship further, refer to the Zsh documentation, and the Starship website above,
+After installing vim-plug, make sure init.vim is in place at:
 
+`~/.config/nvim/init.vim`
+
+One of the plugins in my init.vim file needs Node.js v12 or newer to function. If you don't plan on using nvm like I do in my development environment, you can install Node.js through your distrobution's official repository.
+
+If you plan on configuring your development environment to match mine, uninstall any versions of Node.js and NPM on your system, in preperation for installing NVM in the next section.
+
+# Further configuration
+
+If you are using my Dotfiles, at this point setting up Zsh, Starship and Neovim are complete. If you'd like to configure these applications further, refer to the Zsh documentation, the Starship website above, and the official Neovim documentation.
+
+# Setting up the development environment
+
+## Node.js Version Manager (NVM)
+
+NVM has an offical GitHub repository, you can find it at the link below:
+
+* [nvm-sh/nvm](https://github.com/nvm-sh/nvm)
+
+Install NVM by running this command, (make sure you have cURL installed):
+```
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+My `.zshrc` file is already configured to set up the $NVM_DIR variable, and source the nvm.sh script to make NVM work.
+
+At this point, you can restart your terminal and install Node.js by running:
+```
+$ nvm install node --lts
+```
+and
+```
+$ nvm install node
+```
+I run both the current and LTS versions of Node.js, you can switch between versions of Node by using the `nvm use` command, like so:
+```
+$ nvm use --lts
+```
+At this point NVM and Node are installed and working, and we can move on to preparing the environment for RVM and Ruby.
+
+## SQLite3
+
+Ruby and RVM require SQLite3 as a database system to function properly. If you know how to program with Ruby on Rails, you know you can change the database system, so if you would like to use PostgreSQL or MongoDB instead, please refer to their respective documentations and the Ruby documentation.
+
+I just use SQLite3 in my environment however, and Ubuntu has it in its official repositories. You can install it by issuing:
+```
+$ sudo apt install sqlite3 libsqlite3-dev
+```
+Please note that `libsqlite3-dev` is required for the Ruby Bundler when generating Rails applications.
+
+## Yarn
+I beleive Yarn comes pre-installed on most linux distrobutions. However, if you don't ahve it installed, you can get it from the official Ubuntu repository:
+```
+$ sudo apt install yarn
+```
+
+## Ruby Version Manager (RVM)
+At this point all of the pre-requisites for running Ruby and Ruby on Rails in my development environment are in place, and now it's time to install RVM.
+
+During my initial configuration of my development environment, I referenced [this](https://www.freecodecamp.org/news/how-to-install-rails-on-ubuntu-and-update-ruby-to-the-latest-version/) tutorial at Free Code Camp to set up RVM, Ruby and Rails the first time. RVM has only one pre-requisite:
+```
+$ sudo apt install software-properties-common
+```
+After that we need to add the RVM repositroy from the Ubuntu PPA (Personal Package Archive):
+```
+$ sudo apt-add-repository -y ppa:rael-gc/rvm
+```
+Now we will update the list of available packages and install RVM:
+```
+$ sudo apt update && sudo apt install rvm
+```
+RVM is now installed, and we can move on to installing Ruby and Rails.
+
+## Ruby
+With RVM installed, installing Ruby is as easy as running:
+```
+$ rvm install ruby
+```
+This will install the latest stable main-line version of Ruby, which at the time of writing is Ruby v3.0.0
+
+## Rails
+With Ruby installed, you can install the Rails gem globally by running:
+```
+$ gem install rails
+```
+This will install the latest stable main-line version of Rails, which at the time of writing is Rails v7.0.3
+
+That's it, the development environment is now fully set up!
+
+You should now have:
+```
+rvm 1.29.12
+nvm 0.39.1
+node 16.15.0
+npm 8.5.5
+yarn 0.32+git
+sqlite3 3.31.1
+ruby 3.0.0p0
+rails 7.0.3
+```
+# Development environment IDE integration
+Using WSL2 has the perk that Windows has a pretty seamless integration with the subsystem, making VSCode the ideal editor/IDE to use with this environment.
+
+I use VSCode with the WSL Remote Subsystem, which automatically installs itself the first time you run:
+```
+$ code
+```
+on WSL2.
+
+# Conclusion
+
+That's all there is! You are now fully configured with my Dotfiles and my development environment. I hope you enjoy, and if you find problems or have suggestions for improvement, please email me directly or open an issue on the GitHub repo.
+
+Thanks!

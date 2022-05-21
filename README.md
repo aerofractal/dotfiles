@@ -3,7 +3,7 @@ This is a repo containing my personal Dotfiles for configuration of my shell, pr
 
 ## Finished product
 
-![Prompt](#promptdotfiles.png)
+![Prompt](#promptdotfiles.jpg)
 
 ## Table of Contents
 

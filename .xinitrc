@@ -1,0 +1,1 @@
+exec /bin/qtile start

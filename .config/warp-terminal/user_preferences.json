@@ -1,0 +1,22 @@
+{
+  "prefs": {
+    "OverrideOpacity": "65",
+    "ReceivedReferralTheme": "\"Inactive\"",
+    "FontSize": "13.0",
+    "ShouldDimInactivePanes": "false",
+    "Shortcuts": "true",
+    "Theme": "\"Dark\"",
+    "AIAssistantRequestLimitInfo": "{\"limit\":100,\"num_requests_used_since_refresh\":0,\"next_refresh_time\":\"2024-03-18T00:02:58.226498Z\"}",
+    "AliasExpansionBannerSeen": "true",
+    "AliasExpansionEnabled": "true",
+    "HasAutoOpenedWelcomeFolder": "true",
+    "HonorPS1": "true",
+    "ChangelogVersions": "{\"v0.2024.03.12.08.02.stable_01\":true}",
+    "VimKeybindingsBannerState": "\"Dismissed\"",
+    "Spacing": "\"Compact\"",
+    "DismissedWarpAIWarmWelcome": "true",
+    "WelcomeTipsFeaturesUsed": "[{\"Action\":\"ThemePicker\"},{\"Hint\":\"CreateBlock\"},{\"Action\":\"SplitPane\"},{\"Hint\":\"BlockSelect\"},{\"Hint\":\"BlockAction\"}]",
+    "ExperimentId": "2e0f9196-1de1-4bc7-84e6-a4c18ad7c44b",
+    "VimModeEnabled": "true"
+  }
+}

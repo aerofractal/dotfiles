@@ -1,0 +1,6 @@
+[env]
+TERM = "alacritty"
+
+[window]
+decorations = "none"
+opacity = 0.9

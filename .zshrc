@@ -1,91 +1,22 @@
-# Goto
-[[ -s "/usr/local/share/goto.sh" ]] && source /usr/local/share/goto.sh
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/aerofractal/.zshrc'
 
-source /etc/profile.d/rvm.sh
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 
-# NVM lazy load
-export NVM_DIR="$HOME/.nvm"
-if [ -s "$HOME/.nvm/nvm.sh" ]; then
-  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-  alias nvm='unalias nvm node npm && . "$NVM_DIR"/nvm.sh && nvm'
-  alias node='unalias nvm node npm && . "$NVM_DIR"/nvm.sh && node'
-  alias npm='unalias nvm node npm && . "$NVM_DIR"/nvm.sh && npm'
-fi
+alias ls='exa'
+alias ll='exa -l'
+alias la='exa -al'
+alias grep='grep --color=auto'
+alias ip='ip -c'
 
-# Fix Interop Error that randomly occurs in vscode terminal when using WSL2
-fix_wsl2_interop() {
-    for i in $(pstree -np -s $$ | grep -o -E '[0-9]+'); do
-        if [[ -e "/run/WSL/${i}_interop" ]]; then
-            export WSL_INTEROP=/run/WSL/${i}_interop
-        fi
-    done
-}
+export PATH="$HOME/.config/emacs/bin:$HOME/.bin:$PATH"
 
-# Kubectl Functions
-# ---
-#
-#alias k="kubectl"
-#alias h="helm"
-
-# kn() {
-#    if [ "$1" != "" ]; then
-#	    kubectl config set-context --current --namespace=$1
-#    else
-#	    echo -e "\e[1;31m Error, please provide a valid Namespace\e[0m"
-#    fi
-#}
-
-# knd() {
-#    kubectl config set-context --current --namespace=default
-#}
-
-# ku() {
-#    kubectl config unset current-context
-#}
-
-# Colormap
-function colormap() {
-  for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
-}
-
-# ALIAS COMMANDS
-alias ls="exa --icons --group-directories-first"
-alias ll="exa --icons --group-directories-first -l"
-alias la="exa --icons --group-directories-first -l -a"
-alias g="goto"
-alias grep='grep --color'
-
-
-# find out which distribution we are running on
-_distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
-
-# set an icon based on the distro
-case $_distro in
-    *kali*)                  ICON="ﴣ";;
-    *arch*)                  ICON="";;
-    *debian*)                ICON="";;
-    *raspbian*)              ICON="";;
-    *ubuntu*)                ICON="";;
-    *elementary*)            ICON="";;
-    *fedora*)                ICON="";;
-    *coreos*)                ICON="";;
-    *gentoo*)                ICON="";;
-    *mageia*)                ICON="";;
-    *centos*)                ICON="";;
-    *opensuse*|*tumbleweed*) ICON="";;
-    *sabayon*)               ICON="";;
-    *slackware*)             ICON="";;
-    *linuxmint*)             ICON="";;
-    *alpine*)                ICON="";;
-    *aosc*)                  ICON="";;
-    *nixos*)                 ICON="";;
-    *devuan*)                ICON="";;
-    *manjaro*)               ICON="";;
-    *rhel*)                  ICON="";;
-    *)                       ICON="";;
-esac
-
-export STARSHIP_DISTRO="$ICON "
-
-# Load Starship
 eval "$(starship init zsh)"

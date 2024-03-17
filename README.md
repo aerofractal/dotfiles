@@ -18,7 +18,7 @@ Run Menu: Rofi
 
 ## screenshots
 
-![prompt]{monitor1.png}
+![prompt](monitor1.png)
 
-![allprompts]{all_monitors.png}
+![allprompts](all_monitors.png)
 

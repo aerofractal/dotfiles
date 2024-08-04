@@ -29,8 +29,6 @@ export PATH="$HOME/.config/emacs/bin:$HOME/.bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export GOLIVE_BOT_TOKEN="MTIyMDk0NDUxNTY1MzY5NzU3Ng.Gup44h.73ZTJ5w6q7dz98GDhzCuuHmmufEZogSXKMKlBE"
-
 eval "$(starship init zsh)"
 
 # Created by `pipx` on 2024-04-20 05:24:34

@@ -1,0 +1,37 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/aerofractal/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+export EDITOR="emacsclient -r -n -a 'emacs'"
+
+alias ls='exa'
+alias ll='exa -l'
+alias la='exa -al'
+alias grep='grep --color=auto'
+alias ip='ip -c'
+alias vim='nvim'
+alias fastfetch='fastfetch -l Blackarch -c examples/10'
+
+export PATH="$HOME/.config/emacs/bin:$HOME/.bin:$PATH"
+
+# bun completions
+[ -s "/home/aerofractal/.bun/_bun" ] && source "/home/aerofractal/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export GOLIVE_BOT_TOKEN="MTIyMDk0NDUxNTY1MzY5NzU3Ng.Gup44h.73ZTJ5w6q7dz98GDhzCuuHmmufEZogSXKMKlBE"
+
+eval "$(starship init zsh)"
+
+# Created by `pipx` on 2024-04-20 05:24:34
+export PATH="$PATH:/home/aerofractal/.local/bin"
